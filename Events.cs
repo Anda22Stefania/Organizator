@@ -12,18 +12,25 @@ using Android.Widget;
 
 namespace Organizator2
 {
-    [Activity(Label = "Activity1")]
+    [Activity(Label = "Events")]
     public class Events : Activity
     {
         Button addEvent, back;
+        ListView EventsListview;
+        List<@event> AllEvents = new List<@event>();
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.Events);
+            ListViewAdapter adapter = new ListViewAdapter(this, Resource.Layout.Row, AllEvents);
 
             addEvent = FindViewById<Button>(Resource.Id.btnAddEvent);
             back = FindViewById<Button>(Resource.Id.btnBack);
+            EventsListview = FindViewById<ListView>(Resource.Id.eventsListView);
+
+            EventsListview.Adapter = adapter;
 
 
             addEvent.Click += AddEvent_Click;
@@ -31,8 +38,8 @@ namespace Organizator2
 
         private void AddEvent_Click(object sender, EventArgs e)
         {
-            var intent = new Intent(this, typeof(CreateEvent));
-            StartActivity(intent);
+           
+            StartActivity(typeof(CreateEvent));
         }
     }
     }
