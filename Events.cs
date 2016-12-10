@@ -16,8 +16,8 @@ namespace Organizator2
     public class Events : Activity
     {
         Button addEvent, back;
-        ListView EventsListview;
-        List<@event> AllEvents = new List<@event>();
+        public ListView EventsListview;
+        public List<@event> AllEvents = new List<@event>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
