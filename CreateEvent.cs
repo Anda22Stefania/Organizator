@@ -42,7 +42,7 @@ namespace Organizator2
     [Activity(Label = "CreateEvent")]
     public class CreateEvent : Activity
     {
-        Button createEvent, Back;
+        Button createTheEvent, Back;
         EditText EventTitle, EventDescription;
         public event EventHandler<OnCreateEvent> EventCreation;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -51,18 +51,18 @@ namespace Organizator2
             SetContentView(Resource.Layout.createEvent);
 
 
-            createEvent = FindViewById<Button>(Resource.Id.btnCreateEvent);
+            createTheEvent = FindViewById<Button>(Resource.Id.btnCreateEvent);
             Back = FindViewById<Button>(Resource.Id.btnBack);
             EventTitle = FindViewById<EditText>(Resource.Id.txtTitle);
             EventDescription = FindViewById<EditText>(Resource.Id.txtDescription);
 
 
             Back.Click += Back_Click;
-            createEvent.Click += CreateEvent_Click;
+            createTheEvent.Click += CreateTheEvent_Click;
            
         }
 
-        private void CreateEvent_Click(object sender, EventArgs e)
+        private void CreateTheEvent_Click(object sender, EventArgs e)
         {
             if (EventCreation != null)
             {
