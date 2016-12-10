@@ -3,11 +3,12 @@ using Android.Widget;
 using Android.OS;
 using Android.Content;
 using System.Collections.Generic;
+using Android.Support.V7.App;
 
 namespace Organizator2
 {
-    [Activity(Label = "Organizator2", MainLauncher = true, Icon = "@drawable/icon")]
-    public class MainActivity : Activity
+    [Activity(Label = "Organizator2",Icon = "@drawable/icon")]
+    public class MainActivity : AppCompatActivity
     {
         Button Home, Events, Grades;
         
@@ -35,5 +36,6 @@ namespace Organizator2
         }
     }
 }
+
 
 
