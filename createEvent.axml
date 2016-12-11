@@ -36,11 +36,13 @@
         <Button
             android:text="Create the Event"
             android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:layout_weight="50"
             android:id="@+id/btnCreateEvent" />
         <Button
             android:text="Back"
             android:layout_weight="50"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/btnBack" />
     </LinearLayout>
