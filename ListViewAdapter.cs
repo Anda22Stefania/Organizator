@@ -9,30 +9,24 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.Lang;
 
 namespace Organizator2
 {
-    class ListViewAdapter : BaseAdapter<@event>
+    public class ViewHolder : Java.Lang.Object
+    {
+        public TextView Title { get; set; }
+        public TextView Description { get; set; }
+    }
+    class ListViewAdapter : BaseAdapter
     {
         private List<@event> AllEvents;
-        private Context Context;
-        private int Layout;
+        private Activity activity;
 
-        //constructor
-        public ListViewAdapter (Context context,int layout, List<@event> allevents)
+     public ListViewAdapter(Activity activity, List<@event> AllEvents)
         {
-            Context = context;
-            AllEvents = allevents;
-            Layout = layout;
-        }
-
-
-        public override @event this[int position]
-        {
-            get
-            {
-                return AllEvents[position];
-            }
+            this.activity = activity;
+            this.AllEvents = AllEvents;
         }
 
         public override int Count
@@ -43,22 +37,29 @@ namespace Organizator2
             }
         }
 
+      
+
+        public override Java.Lang.Object GetItem(int position)
+        {
+            return null;
+        }
+
         public override long GetItemId(int position)
         {
-            return position;
+            return AllEvents[position].Id;
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            View row = convertView;
-            if (row == null)
-            {
-                row = LayoutInflater.From(Context).Inflate(Resource.Layout.Row, null, false);
-            }
+            var view = convertView ?? activity.LayoutInflater.Inflate(Resource.Layout.Row, parent, false);
 
-            row.FindViewById<TextView>(Resource.Id.createTitle).Text = AllEvents[position].Title;
-            row.FindViewById<TextView>(Resource.Id.createDescription).Text = AllEvents[position].Description;
-            return row;
+            var txtTitle = view.FindViewById<TextView>(Resource.Id.Title);
+            var txtDescription = view.FindViewById<TextView>(Resource.Id.Description);
+
+            txtTitle.Text = AllEvents[position].Title;
+            txtDescription.Text = AllEvents[position].Description;
+            return view;
         }
     }
-}
+        
+    }
