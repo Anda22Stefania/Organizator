@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="76.0dp"
+        android:id="@+id/txtTitle"
+        android:hint="Give it a title"
+        android:layout_marginTop="5dp" />
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDescription"
+        android:layout_marginTop="5dp"
+        android:hint="Give it a description" />
+    <Button
+        android:text="Add the event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCreateEvent"
+        android:layout_marginTop="0dp" />
+    <Button
+        android:text="Back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBack" />
+</LinearLayout>

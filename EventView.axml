@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="81.0dp"
+        android:id="@+id/SingleEvTitle"
+        android:gravity="center"
+        android:text="Event Title"
+        android:capitalize="words"
+        android:textSize="27dp" />
+    <TextView
+        android:text="Event Description"
+        android:layout_width="match_parent"
+        android:textSize="20dp"
+        android:layout_height="321.0dp"
+        android:id="@+id/SingleEvDescription"
+        android:gravity="left" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="92.5dp"
+        android:weightSum="100"
+        android:id="@+id/linearLayout1">
+        <Button
+            android:text="Edit Event"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:id="@+id/btnEdit" />
+        <Button
+            android:text="Delete Event"
+            android:layout_width="wrap_content"
+            android:layout_weight="50"
+            android:layout_height="match_parent"
+            android:id="@+id/btnDelete" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="36.0dp"
+        android:id="@+id/linearLayout2">
+        <Button
+            android:text="Finished!"
+            android:layout_width="match_parent"
+            android:layout_height="45.0dp"
+            android:id="@+id/btnFinish" />
+    </LinearLayout>
+</LinearLayout>
